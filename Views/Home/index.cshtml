@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Panel Principal";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🎬 Panel Principal del Sistema de Películas</h2>
+
+    <div class="row justify-content-center">
+
+        <!-- Películas -->
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm text-center border-primary">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">Películas</h4>
+                    <p class="card-text">Gestiona el catálogo completo de películas con su género, director y actores.</p>
+                    <a asp-controller="PeliculaMVC" asp-action="Index" class="btn btn-primary">
+                        Ir a Películas
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actores -->
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm text-center border-success">
+                <div class="card-body">
+                    <h4 class="card-title text-success">Actores</h4>
+                    <p class="card-text">Administra los actores registrados y su información personal.</p>
+                    <a asp-controller="Actor" asp-action="Index" class="btn btn-success">
+                        Ir a Actores
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Directores -->
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm text-center border-warning">
+                <div class="card-body">
+                    <h4 class="card-title text-warning">Directores</h4>
+                    <p class="card-text">Controla los datos de los directores de las películas.</p>
+                    <a asp-controller="DirectorMVC" asp-action="Index" class="btn btn-warning text-white">
+                        Ir a Directores
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Géneros -->
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm text-center border-danger">
+                <div class="card-body">
+                    <h4 class="card-title text-danger">Géneros</h4>
+                    <p class="card-text">Crea, edita o elimina los géneros cinematográficos.</p>
+                    <a asp-controller="GeneroMVC" asp-action="Index" class="btn btn-danger">
+                        Ir a Géneros
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="text-muted">Sistema desarrollado en ASP.NET Core MVC — @DateTime.Now.Year</p>
+    </div>
+</div>

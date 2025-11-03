@@ -1,0 +1,102 @@
+@model Peliculas.Models.Pelicula
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "Crear Película";
+    var generos = new SelectList((IEnumerable<Peliculas.Models.Genero>)ViewBag.Generos, "Id", "Nombre");
+    var directores = new SelectList((IEnumerable<Peliculas.Models.Director>)ViewBag.Directores, "Id", "Nombre");
+    var actores = (IEnumerable<Peliculas.Models.Actor>)ViewBag.Actores;
+    var seleccionados = (IEnumerable<int>)ViewBag.SelectedActorIds;
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<form asp-action="Create" method="post" enctype="multipart/form-data" class="row g-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="col-md-6">
+        <label asp-for="Titulo" class="form-label"></label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="DuracionMinutos" class="form-label"></label>
+        <input asp-for="DuracionMinutos" class="form-control" />
+        <span asp-validation-for="DuracionMinutos" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="FechaEstreno" class="form-label"></label>
+        <input asp-for="FechaEstreno" class="form-control" type="date" />
+        <span asp-validation-for="FechaEstreno" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="GeneroId" class="form-label">Género</label>
+        <select asp-for="GeneroId" class="form-select" asp-items="generos">
+            <option value="0">(Seleccione un género)</option>
+        </select>
+        <span asp-validation-for="GeneroId" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="DirectorId" class="form-label">Director</label>
+        <select asp-for="DirectorId" class="form-select" asp-items="directores">
+            <option value="0">(Seleccione un director)</option>
+        </select>
+        <span asp-validation-for="DirectorId" class="text-danger"></span>
+    </div>
+
+    <div class="col-12">
+        <label asp-for="Sinopsis" class="form-label"></label>
+        <textarea asp-for="Sinopsis" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Sinopsis" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label d-flex align-items-center gap-2">
+            Actores
+            <button type="button" id="toggleAllCreate" class="btn btn-sm btn-outline-primary">Seleccionar/Quitar todos</button>
+        </label>
+
+        <div class="border rounded p-2" style="max-height: 280px; overflow:auto;">
+            @foreach (var a in actores)
+            {
+                var isChecked = seleccionados != null && seleccionados.Contains(a.Id);
+                <div class="form-check">
+                    <input class="form-check-input actor-checkbox-create"
+                           type="checkbox"
+                           name="SelectedActorIds"
+                           id="actor_create_@a.Id"
+                           value="@a.Id"
+                           @(isChecked ? "checked" : "") />
+                    <label class="form-check-label" for="actor_create_@a.Id">@a.Nombre</label>
+                </div>
+            }
+        </div>
+        <div class="form-text">Puedes marcar varios actores.</div>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="PosterFile" class="form-label">Póster</label>
+        <input asp-for="PosterFile" class="form-control" type="file" accept="image/*" />
+        <span asp-validation-for="PosterFile" class="text-danger"></span>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-success">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('toggleAllCreate')?.addEventListener('click', function () {
+            const boxes = document.querySelectorAll('.actor-checkbox-create');
+            const allChecked = Array.from(boxes).every(cb => cb.checked);
+            boxes.forEach(cb => cb.checked = !allChecked);
+        });
+    </script>
+}

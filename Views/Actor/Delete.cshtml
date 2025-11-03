@@ -1,0 +1,18 @@
+@model Peliculas.Models.Actor
+@{
+    ViewData["Title"] = "Eliminar Actor";
+}
+<div class="container py-4">
+    <div class="card shadow-sm p-4 mx-auto text-center" style="max-width:600px;">
+        <h4>¿Seguro que deseas eliminar a <strong>@Model.Nombre</strong>?</h4>
+
+        <form asp-action="Delete" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

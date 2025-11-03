@@ -1,0 +1,33 @@
+@model Peliculas.Models.Pelicula
+
+@{
+    ViewData["Title"] = "Detalles de Película";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr/>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        @if (Model.Poster != null && Model.Poster.Length > 0)
+        {
+            var b64 = Convert.ToBase64String(Model.Poster);
+            <img src="data:image/*;base64,@b64" alt="Poster" class="img-fluid rounded shadow-sm" />
+        }
+        else
+        {
+            <div class="border rounded p-4 text-center text-muted">Sin imagen</div>
+        }
+    </div>
+    <div class="col-md-8">
+        <p><strong>Título:</strong> @Model.Titulo</p>
+        <p><strong>Sinopsis:</strong> @Model.Sinopsis</p>
+        <p><strong>Duración:</strong> @Model.DuracionMinutos min</p>
+        <p><strong>Fecha de Estreno:</strong> @Model.FechaEstreno.ToString("yyyy-MM-dd")</p>
+        <p><strong>Género:</strong> @Model.Genero?.Nombre</p>
+        <p><strong>Director:</strong> @Model.Director?.Nombre</p>
+
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">✏️ Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">↩️ Volver</a>
+    </div>
+</div>

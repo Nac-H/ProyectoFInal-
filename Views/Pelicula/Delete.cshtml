@@ -1,0 +1,24 @@
+@model Peliculas.Models.Pelicula
+@{
+    ViewData["Title"] = "Eliminar Película";
+}
+<h2>¿Eliminar película?</h2>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">Título</dt>
+    <dd class="col-sm-9">@Model.Titulo</dd>
+    <dt class="col-sm-3">Género</dt>
+    <dd class="col-sm-9">@Model.Genero?.Nombre</dd>
+    <dt class="col-sm-3">Director</dt>
+    <dd class="col-sm-9">@Model.Director?.Nombre</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

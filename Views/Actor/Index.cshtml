@@ -1,0 +1,49 @@
+@model IEnumerable<Peliculas.Models.Actor>
+@{
+    ViewData["Title"] = "Lista de Actores";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4 text-center">@ViewData["Title"]</h2>
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-success text-center">@ViewBag.Mensaje</div>
+    }
+
+    <div class="text-end mb-3">
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Nuevo Actor
+        </a>
+    </div>
+
+    <div class="table-responsive shadow-sm">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Biografía</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var actor in Model)
+                {
+                    <tr>
+                        <td>@actor.Nombre</td>
+                        <td>@actor.FechaNacimiento.ToShortDateString()</td>
+                        <td>@actor.Biografia</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a asp-action="Edit" asp-route-id="@actor.Id" class="btn btn-warning btn-sm">Editar</a>
+                                <a asp-action="Details" asp-route-id="@actor.Id" class="btn btn-info btn-sm text-white">Ver</a>
+                                <a asp-action="Delete" asp-route-id="@actor.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

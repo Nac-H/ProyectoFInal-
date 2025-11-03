@@ -1,0 +1,127 @@
+@model IEnumerable<Peliculas.Models.Pelicula>
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Películas";
+    var generos = new SelectList((IEnumerable<Peliculas.Models.Genero>)ViewBag.Generos, "Id", "Nombre", ViewBag.FiltroGeneroId);
+    var directores = new SelectList((IEnumerable<Peliculas.Models.Director>)ViewBag.Directores, "Id", "Nombre", ViewBag.FiltroDirectorId);
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr/>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-success">@ViewBag.Mensaje</div>
+}
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3">
+        <input name="q" value="@(ViewBag.FiltroTexto ?? "")" class="form-control" placeholder="Buscar por título..." />
+    </div>
+    <div class="col-md-3">
+        <select name="generoId" class="form-select" asp-items="generos">
+            <option value="0">(Todos los géneros)</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="directorId" class="form-select" asp-items="directores">
+            <option value="0">(Todos los directores)</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary">Filtrar</button>
+        <a asp-action="Index" class="btn btn-secondary">Limpiar</a>
+        <a asp-action="Create" class="btn btn-success">Nueva Película</a>
+    </div>
+</form>
+
+<table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Poster</th>
+            <th>Título</th>
+            <th>Género</th>
+            <th>Director</th>
+            <th>Actores</th>
+            <th>Duración</th>
+            <th>Estreno</th>
+            <th style="width:220px">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var p in Model)
+    {
+        var actores = p.Actores != null
+            ? string.Join(", ", p.Actores.Where(ap => ap.Actor != null && !string.IsNullOrWhiteSpace(ap.Actor.Nombre)).Select(ap => ap.Actor.Nombre))
+            : "";
+
+        <tr>
+            <td>
+                @if (p.Poster != null && p.Poster.Length > 0)
+                {
+                    var b64 = Convert.ToBase64String(p.Poster);
+                    <img src="data:image/*;base64,@b64"
+                         alt="Poster"
+                         class="poster-thumb"
+                         style="height:60px;object-fit:cover;border-radius:4px;cursor:pointer;"
+                         data-fullsrc="data:image/*;base64,@b64" />
+                }
+                else { <span class="text-muted">Sin imagen</span> }
+            </td>
+            <td>@p.Titulo</td>
+            <td>
+                <a asp-controller="GeneroMVC" asp-action="Details" asp-route-id="@p.GeneroId">@p.Genero?.Nombre</a>
+            </td>
+            <td>
+                <a asp-controller="DirectorMVC" asp-action="Details" asp-route-id="@p.DirectorId">@p.Director?.Nombre</a>
+            </td>
+            <td>@actores</td>
+            <td>@p.DuracionMinutos</td>
+            <td>@p.FechaEstreno.ToString("yyyy-MM-dd")</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@p.Id" class="btn btn-info btn-sm">Detalles</a>
+                <a asp-action="Edit"    asp-route-id="@p.Id" class="btn btn-warning btn-sm">Editar</a>
+                <a asp-action="Delete"  asp-route-id="@p.Id" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<!-- Modal de imagen a pantalla completa -->
+<div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content" style="background: rgba(0,0,0,0.9); border:none;">
+      <div class="modal-body p-0 d-flex justify-content-center align-items-center">
+        <img id="posterModalImg" src="" alt="Poster" style="max-width:100%; max-height:90vh; height:auto; width:auto; display:block;" />
+      </div>
+      <button type="button" class="btn btn-light position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            const modalEl = document.getElementById('posterModal');
+            const modalImg = document.getElementById('posterModalImg');
+
+            document.addEventListener('click', function (e) {
+                const target = e.target;
+                if (target && target.classList && target.classList.contains('poster-thumb')) {
+                    const full = target.getAttribute('data-fullsrc');
+                    if (full) {
+                        modalImg.src = full;
+                        const bsModal = new bootstrap.Modal(modalEl);
+                        bsModal.show();
+                    }
+                }
+            });
+
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                modalImg.src = '';
+            });
+        })();
+    </script>
+}
