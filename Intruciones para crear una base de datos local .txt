@@ -1,0 +1,29 @@
+1)Instalar la herrmienta ef 
+
+dotnet tool install --global dotnet-ef
+
+2) Actualziar la base de datos
+dotnet ef database update
+
+En caso que falle 
+
+
+1) verificar el appsettings.json y agregar esta linea
+
+ "ConnectionStrings": {
+    "DefaultConnection": 
+    "Server=(localdb)\\MSSQLLocalDB;Database=PeliculasDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+
+2) Verificar el servico en el Program.cs
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+3)crear una nueva migración
+
+dotnet ef migrations add New Migración
+
+
+4) Actulizar la base de datos
+dotnet ef database update
