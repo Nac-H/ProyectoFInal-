@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Peliculas
+build_property.RootNamespace = Peliculas
+build_property.ProjectDir = /home/nach/Escritorio/Proyecto Final/Peliculas/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/nach/Escritorio/Proyecto Final/Peliculas
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Actor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Actor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Actor/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Actor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Actor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWN0b3IvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Director/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3IvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Director/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3IvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Director/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3IvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Director/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3IvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Director/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3IvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Genero/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2VuZXJvL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Genero/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2VuZXJvL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Genero/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2VuZXJvL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Genero/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2VuZXJvL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Genero/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2VuZXJvL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Home/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9pbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Pelicula/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVsaWN1bGEvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Pelicula/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVsaWN1bGEvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Pelicula/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVsaWN1bGEvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Pelicula/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVsaWN1bGEvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Pelicula/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVsaWN1bGEvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nach/Escritorio/Proyecto Final/Peliculas/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fgug1vwy2f
